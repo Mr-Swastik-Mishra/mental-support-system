@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Your Mental Wellness Journey</title>
+    <meta name="description" content="Your personalized mental health dashboard with AI support, mood tracking, and wellness tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2338bdf8'/><text x='50' y='70' text-anchor='middle' font-size='60' font-weight='800' fill='white'>M</text></svg>">
+</head>
+<body class="dashboard-body">
+    <!-- Modern Dashboard Header -->
+    <header class="header" id="dashboardHeader">
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-img">M</div>
+                <span class="logo-text">Mental Wellness Hub</span>
+            </div>
+            <div class="dashboard-header-right">
+                <div class="user-greeting">
+                    <span class="greeting-text">Good morning, Sarah! </span>
+                    <span class="greeting-emoji">🌟</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline btn-small" onclick="window.location.href='chatbot.html'">
+                        🤖 AI Support
+                    </button>
+                    <button class="btn btn-accent btn-small" onclick="window.location.href='booking.html'">
+                        📅 Book Session
+                    </button>
+                </div>
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b9e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Profile" class="profile-img">
+                        <div class="profile-status"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Dashboard Main -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="dashboard-welcome">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Your Wellness Dashboard</h1>
+                    <p class="welcome-subtitle">Track your progress, access support, and maintain your mental wellness journey</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Mood Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">Sessions</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Quick Mood Check -->
+                <div class="card dashboard-card">
+                    <div class="card-header">
+                        <h3>📊 Quick Mood Check</h3>
+                        <p>How are you feeling right now?</p>
+                    </div>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="great" title="Excellent">
+                            <span class="mood-emoji">😄</span>
+                        </button>
+                        <button class="mood-btn" data-mood="good" title="Good">
+                            <span class="mood-emoji">😊</span>
+                        </button>
+                        <button class="mood-btn" data-mood="okay" title="Neutral">
+                            <span class="mood-emoji">😐</span>
+                        </button>
+                        <button class="mood-btn" data-mood="down" title="Low">
+                            <span class="mood-emoji">😔</span>
+                        </button>
+                        <button class="mood-btn" data-mood="anxious" title="Anxious">
+                            <span class="mood-emoji">😰</span>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="window.location.href='mood-tracker.html'">
+                        Detailed Tracking
+                    </button>
+                </div>
+
+                <!-- Emergency Support -->
+                <div class="card dashboard-card emergency-card">
+                    <div class="card-header">
+                        <h3>🆘 Emergency Support</h3>
+                        <p>Immediate help when you need it</p>
+                    </div>
+                    <div class="emergency-options">
+                        <button class="btn btn-accent btn-small" onclick="window.location.href='chatbot.html?emergency=true'">
+                            🤖 Crisis Chat
+                        </button>
+                        <button class="btn btn-secondary btn-small" onclick="callHelpline('988')">
+                            📞 Call 988
+                        </button>
+                    </div>
+                    <div class="emergency-info">
+                        <small>24/7 Crisis Text Line: Text HOME to 741741</small>
+                    </div>
+                </div>
+
+                <!-- Instant Relief Tools -->
+                <div class="card dashboard-card relief-card">
+                    <div class="card-header">
+                        <h3>🌱 Instant Relief</h3>
+                        <p>Quick tools for immediate support</p>
+                    </div>
+                    <div class="relief-grid">
+                        <button class="relief-btn" onclick="window.location.href='breathing-exercises.html'">
+                            <div class="relief-icon">🫁</div>
+                            <span>Breathing</span>
+                            <small>2-3 min</small>
+                        </button>
+                        <button class="relief-btn" onclick="window.location.href='sounds.html'">
+                            <div class="relief-icon">🎵</div>
+                            <span>Calming Sounds</span>
+                            <small>Instant</small>
+                        </button>
+                        <button class="relief-btn" onclick="showAffirmation()">
+                            <div class="relief-icon">✨</div>
+                            <span>Affirmation</span>
+                            <small>Positive boost</small>
+                        </button>
+                        <button class="relief-btn" onclick="window.location.href='chatbot.html'">
+                            <div class="relief-icon">🤖</div>
+                            <span>AI Chat</span>
+                            <small>24/7 support</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Today's Wellness Plan -->
+                <div class="card dashboard-card plan-card">
+                    <div class="card-header">
+                        <h3>📅 Today's Wellness Plan</h3>
+                        <p>Your personalized activities for today</p>
+                    </div>
+                    <div class="plan-list">
+                        <div class="plan-item completed">
+                            <div class="plan-time">9:00 AM</div>
+                            <div class="plan-content">
+                                <h4>Morning Meditation ✓</h4>
+                                <p>5-minute mindfulness session</p>
+                            </div>
+                            <div class="plan-status completed">Complete</div>
+                        </div>
+                        <div class="plan-item current">
+                            <div class="plan-time">2:00 PM</div>
+                            <div class="plan-content">
+                                <h4>Study Break</h4>
+                                <p>10-minute breathing exercise</p>
+                            </div>
+                            <button class="btn btn-accent btn-small plan-btn">Start Now</button>
+                        </div>
+                        <div class="plan-item">
+                            <div class="plan-time">8:00 PM</div>
+                            <div class="plan-content">
+                                <h4>Evening Reflection</h4>
+                                <p>Journal your thoughts and gratitude</p>
+                            </div>
+                            <button class="btn btn-outline btn-small plan-btn">Scheduled</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Progress -->
+                <div class="card dashboard-card progress-card">
+                    <div class="card-header">
+                        <h3>📈 Weekly Progress</h3>
+                        <p>Your mental wellness journey this week</p>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="progress-item">
+                            <div class="progress-label">Mood Tracking</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <div class="progress-value">6/7 days</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Meditation Minutes</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                            <div class="progress-value">105/150 min</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">AI Conversations</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="progress-value">12 sessions</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-small" onclick="window.location.href='mood-tracker.html'">
+                        View Detailed Stats
+                    </button>
+                </div>
+
+                <!-- Professional Resources -->
+                <div class="card dashboard-card resources-card">
+                    <div class="card-header">
+                        <h3>📚 Recommended for You</h3>
+                        <p>Evidence-based resources tailored to your needs</p>
+                    </div>
+                    <div class="resources-grid">
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Stress Management">
+                            <div class="resource-content">
+                                <h4>Managing Academic Stress</h4>
+                                <p>Evidence-based techniques to stay calm during exams</p>
+                                <div class="resource-meta">
+                                    <span class="duration">🕰️ 8 min read</span>
+                                    <span class="type">Article</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1540206458725-e34be856c28a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sleep Meditation">
+                            <div class="resource-content">
+                                <h4>Guided Sleep Meditation</h4>
+                                <p>Professional guided meditation for better sleep</p>
+                                <div class="resource-meta">
+                                    <span class="duration">🎧 15 min audio</span>
+                                    <span class="type">Meditation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resource-item">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Relationships">
+                            <div class="resource-content">
+                                <h4>Building Healthy Relationships</h4>
+                                <p>Tips for meaningful connections and communication</p>
+                                <div class="resource-meta">
+                                    <span class="duration">🎥 12 min watch</span>
+                                    <span class="type">Video</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="window.location.href='resources.html'">
+                        Explore All Resources
+                    </button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card dashboard-card quick-actions-card">
+                    <div class="card-header">
+                        <h3>⚡ Quick Actions</h3>
+                        <p>Essential tools at your fingertips</p>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <button class="action-btn" onclick="window.location.href='booking.html'">
+                            <div class="action-icon">👨‍⚕️</div>
+                            <span>Book Professional</span>
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='community.html'">
+                            <div class="action-icon">👥</div>
+                            <span>Join Community</span>
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='resources.html'">
+                            <div class="action-icon">📚</div>
+                            <span>Learning Center</span>
+                        </button>
+                        <button class="action-btn" onclick="exportProgress()">
+                            <div class="action-icon">📄</div>
+                            <span>Export Progress</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+        </div>
+    </main>
+
+
+    <!-- Affirmation Modal -->
+    <div id="affirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAffirmation()">&times;</span>
+            <h3>✨ Today's Positive Affirmation</h3>
+            <p id="affirmationText">You are capable, resilient, and worthy of happiness. Every small step forward is progress worth celebrating.</p>
+            <button class="btn btn-primary" onclick="closeAffirmation()">Thank you! 😊</button>
+        </div>
+    </div>
+
+    <!-- Modern Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <div class="nav-icon">🏠</div>
+            <span>Home</span>
+        </a>
+        <a href="chatbot.html" class="nav-item">
+            <div class="nav-icon">💬</div>
+            <span>Chat</span>
+        </a>
+        
+        <a href="breathing-exercises.html" class="nav-item">
+            <div class="nav-icon">🫁</div>
+            <span>Breath</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <div class="nav-icon">🔍</div>
+            <span>Discover</span>
+        </a>
+        <a href="sounds.html" class="nav-item">
+            <div class="nav-icon">🎵</div>
+            <span>Sounds</span>
+        </a>
+        
+    </nav>
+
+    <script>
+        // Modern Dashboard JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dashboard animations
+            initializeDashboard();
+            
+            // Add mood tracking functionality
+            initializeMoodTracking();
+            
+            // Add progress animations
+            animateProgressBars();
+            
+            // Update time-based greetings
+            updateGreeting();
+            
+        });
+
+        function initializeDashboard() {
+            // Smooth card animations
+            const cards = document.querySelectorAll('.dashboard-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        }
+
+        function initializeMoodTracking() {
+            const moodButtons = document.querySelectorAll('.mood-btn');
+            moodButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    moodButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Save mood data (you can integrate with your backend)
+                    const mood = this.dataset.mood;
+                    console.log('Mood recorded:', mood);
+                    
+                    // Show success feedback
+                    showNotification('Mood recorded! 📊', 'success');
+                });
+            });
+        }
+
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach((bar, index) => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease';
+                    bar.style.width = width;
+                }, 500 + (index * 200));
+            });
+        }
+
+        function updateGreeting() {
+            const greetingText = document.querySelector('.greeting-text');
+            const greetingEmoji = document.querySelector('.greeting-emoji');
+            const hour = new Date().getHours();
+            const name = 'Sarah'; // This would come from user data
+            
+            let greeting, emoji;
+            
+            if (hour < 12) {
+                greeting = `Good morning, ${name}! `;
+                emoji = '🌅';
+            } else if (hour < 17) {
+                greeting = `Good afternoon, ${name}! `;
+                emoji = '☀️';
+            } else {
+                greeting = `Good evening, ${name}! `;
+                emoji = '🌙';
+            }
+            
+            if (greetingText) greetingText.textContent = greeting;
+            if (greetingEmoji) greetingEmoji.textContent = emoji;
+        }
+
+        function showAffirmation() {
+            const affirmations = [
+                "You are capable of amazing things. Trust in your journey. 🌟",
+                "Every challenge you face is making you stronger and wiser. 💪",
+                "Your mental health matters. You deserve care and compassion. 💖",
+                "Progress, not perfection. Every small step counts. 🎈",
+                "You have survived 100% of your difficult days so far. 🌈",
+                "Your feelings are valid, and it's okay to not be okay sometimes. 🤗"
+            ];
+            
+            const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+            document.getElementById('affirmationText').textContent = randomAffirmation;
+            document.getElementById('affirmationModal').style.display = 'flex';
+        }
+
+        function closeAffirmation() {
+            document.getElementById('affirmationModal').style.display = 'none';
+        }
+
+        function callHelpline(number) {
+            if (confirm(`Call ${number} for immediate crisis support?`)) {
+                window.location.href = `tel:${number}`;
+            }
+        }
+
+        function exportProgress() {
+            showNotification('Progress export feature coming soon! 📈', 'info');
+        }
+
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('affirmationModal');
+            if (event.target === modal) {
+                closeAffirmation();
+            }
+        }
+
+        console.log('📋 Dashboard loaded successfully!');
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

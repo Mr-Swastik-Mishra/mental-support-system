@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - Mental Wellness Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mood-tracker-body">
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">← Back</button>
+            <h1>Mood Tracker</h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="showMoodHistory()">History</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mood-tracker-main">
+        <div class="container">
+            <!-- Current Mood Section -->
+            <section class="mood-section">
+                <div class="section-header">
+                    <h2>How are you feeling right now?</h2>
+                    <p>Select the emotion that best describes your current state</p>
+                </div>
+                
+                <div class="mood-grid">
+                    <button class="mood-option" data-mood="joyful" data-color="#FFD700">
+                        <div class="mood-emoji">😄</div>
+                        <span class="mood-label">Joyful</span>
+                        <span class="mood-description">Happy and energetic</span>
+                    </button>
+                    <button class="mood-option" data-mood="content" data-color="#32CD32">
+                        <div class="mood-emoji">😊</div>
+                        <span class="mood-label">Content</span>
+                        <span class="mood-description">Peaceful and satisfied</span>
+                    </button>
+                    <button class="mood-option" data-mood="neutral" data-color="#87CEEB">
+                        <div class="mood-emoji">😐</div>
+                        <span class="mood-label">Neutral</span>
+                        <span class="mood-description">Neither up nor down</span>
+                    </button>
+                    <button class="mood-option" data-mood="worried" data-color="#FFA500">
+                        <div class="mood-emoji">😟</div>
+                        <span class="mood-label">Worried</span>
+                        <span class="mood-description">Anxious or concerned</span>
+                    </button>
+                    <button class="mood-option" data-mood="sad" data-color="#4169E1">
+                        <div class="mood-emoji">😢</div>
+                        <span class="mood-label">Sad</span>
+                        <span class="mood-description">Feeling down or blue</span>
+                    </button>
+                    <button class="mood-option" data-mood="angry" data-color="#DC143C">
+                        <div class="mood-emoji">😠</div>
+                        <span class="mood-label">Angry</span>
+                        <span class="mood-description">Frustrated or upset</span>
+                    </button>
+                    <button class="mood-option" data-mood="stressed" data-color="#8B0000">
+                        <div class="mood-emoji">😰</div>
+                        <span class="mood-label">Stressed</span>
+                        <span class="mood-description">Overwhelmed or pressured</span>
+                    </button>
+                    <button class="mood-option" data-mood="lonely" data-color="#696969">
+                        <div class="mood-emoji">😔</div>
+                        <span class="mood-label">Lonely</span>
+                        <span class="mood-description">Feeling isolated</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Mood Intensity -->
+            <section class="intensity-section" id="intensitySection" style="display: none;">
+                <div class="section-header">
+                    <h3>How intense is this feeling?</h3>
+                    <p>Rate the intensity from 1 (mild) to 10 (overwhelming)</p>
+                </div>
+                <div class="intensity-slider">
+                    <input type="range" id="intensityRange" min="1" max="10" value="5" class="slider">
+                    <div class="intensity-labels">
+                        <span>1 - Mild</span>
+                        <span>10 - Overwhelming</span>
+                    </div>
+                    <div class="intensity-value">
+                        <span id="intensityValue">5</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Questions -->
+            <section class="questions-section" id="questionsSection" style="display: none;">
+                <div class="section-header">
+                    <h3>Tell us more about your day</h3>
+                    <p>These insights help us provide better support</p>
+                </div>
+                
+                <div class="question-group">
+                    <label>What's contributing to how you feel today?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="academic-pressure">
+                            <span class="checkmark"></span>
+                            Academic pressure
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="social-issues">
+                            <span class="checkmark"></span>
+                            Social relationships
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="family">
+                            <span class="checkmark"></span>
+                            Family concerns
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="health">
+                            <span class="checkmark"></span>
+                            Health issues
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="financial">
+                            <span class="checkmark"></span>
+                            Financial stress
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="future-worries">
+                            <span class="checkmark"></span>
+                            Future concerns
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label>What activities have you done today?</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="exercise">
+                            <span class="checkmark"></span>
+                            Exercise/Physical activity
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="social-time">
+                            <span class="checkmark"></span>
+                            Time with friends
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="study">
+                            <span class="checkmark"></span>
+                            Studying/Learning
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="hobbies">
+                            <span class="checkmark"></span>
+                            Hobbies/Creative activities
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="relaxation">
+                            <span class="checkmark"></span>
+                            Relaxation/Meditation
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="sleep-well">
+                            <span class="checkmark"></span>
+                            Good sleep
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label>Any additional thoughts or notes?</label>
+                    <textarea id="additionalNotes" placeholder="Share anything else that might be affecting your mood..." rows="3"></textarea>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="actions-section" id="actionsSection" style="display: none;">
+                <div class="action-buttons">
+                    <button class="btn btn-primary btn-large" onclick="saveMoodEntry()">
+                        Save My Mood
+                    </button>
+                    <button class="btn btn-secondary" onclick="skipQuestions()">
+                        Skip Questions
+                    </button>
+                </div>
+            </section>
+
+            <!-- Mood Insights -->
+            <section class="insights-section" id="insightsSection" style="display: none;">
+                <div class="insights-card">
+                    <h3>Your Mood Insights</h3>
+                    <div class="insight-item">
+                        <div class="insight-icon">📈</div>
+                        <div class="insight-content">
+                            <h4>Trend Analysis</h4>
+                            <p>Your mood has been improving over the past week!</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">💡</div>
+                        <div class="insight-content">
+                            <h4>Suggested Actions</h4>
+                            <p>Based on your current mood, try our breathing exercises or calming sounds.</p>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='breathing-exercises.html'">
+                            Try Breathing Exercise
+                        </button>
+                        <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">
+                            Back to Dashboard
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Mood History Modal -->
+    <div id="moodHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mood History</h3>
+            <div class="mood-chart">
+                <div class="chart-placeholder">
+                    <p>📊 Mood trend over the last 7 days</p>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 60%;" data-day="Mon"></div>
+                        <div class="chart-bar" style="height: 80%;" data-day="Tue"></div>
+                        <div class="chart-bar" style="height: 40%;" data-day="Wed"></div>
+                        <div class="chart-bar" style="height: 70%;" data-day="Thu"></div>
+                        <div class="chart-bar" style="height: 90%;" data-day="Fri"></div>
+                        <div class="chart-bar" style="height: 50%;" data-day="Sat"></div>
+                        <div class="chart-bar" style="height: 75%;" data-day="Sun"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <div class="nav-icon">🏠</div>
+            <span>Home</span>
+        </a>
+        <a href="chatbot.html" class="nav-item">
+            <div class="nav-icon">💬</div>
+            <span>Chat</span>
+        </a>
+        <a href="mood-tracker.html" class="quick-access-card">
+                    <div class="quick-icon">📊</div>
+                    <span>Track Your Mood</span>
+                </a>
+        <a href="breathing-exercises.html" class="nav-item">
+            <div class="nav-icon">🫁</div>
+            <span>Breath</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <div class="nav-icon">🔍</div>
+            <span>Discover</span>
+        </a>
+        <a href="sounds.html" class="nav-item">
+            <div class="nav-icon">🎵</div>
+            <span>Sounds</span>
+        </a>
+        
+    </nav>
+    <script src="mood-tracker.js"></script>
+</body>
+</html>

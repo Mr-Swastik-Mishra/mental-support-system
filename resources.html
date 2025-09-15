@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Hub - Mental Wellness Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="resources-body">
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">← Back</button>
+            <h1>Resource Hub</h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search resources..." id="resourceSearch">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="resources-main">
+        <div class="container">
+            <!-- Resource Categories -->
+            <section class="categories-section">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="articles">Articles</button>
+                    <button class="filter-btn" data-category="videos">Videos</button>
+                    <button class="filter-btn" data-category="audio">Audio</button>
+                    <button class="filter-btn" data-category="guides">Guides</button>
+                </div>
+            </section>
+
+            <!-- Featured Resources -->
+            <section class="featured-section">
+                <h2>Featured Resources</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Video" alt="Featured Resource">
+                            <div class="play-overlay">
+                                <button class="play-btn">▶️</button>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="resource-category">Video</div>
+                            <h3>Managing Exam Stress: A Complete Guide</h3>
+                            <p>Learn effective strategies to stay calm and focused during exam periods with practical techniques.</p>
+                            <div class="resource-meta">
+                                <span class="duration">12 min</span>
+                                <span class="views">2.3k views</span>
+                                <span class="rating">⭐ 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Audio" alt="Featured Resource">
+                            <div class="audio-overlay">
+                                <button class="audio-btn">🎵</button>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="resource-category">Audio</div>
+                            <h3>Guided Sleep Meditation</h3>
+                            <p>A calming 20-minute meditation to help you fall asleep faster and sleep more deeply.</p>
+                            <div class="resource-meta">
+                                <span class="duration">20 min</span>
+                                <span class="views">1.8k plays</span>
+                                <span class="rating">⭐ 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Article" alt="Featured Resource">
+                            <div class="read-overlay">
+                                <button class="read-btn">📖</button>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="resource-category">Article</div>
+                            <h3>Building Resilience in College</h3>
+                            <p>Discover how to develop mental resilience and bounce back from challenges during your college journey.</p>
+                            <div class="resource-meta">
+                                <span class="duration">8 min read</span>
+                                <span class="views">3.1k reads</span>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resource Library -->
+            <section class="library-section">
+                <div class="library-header">
+                    <h2>Resource Library</h2>
+                    <div class="sort-options">
+                        <select class="sort-select">
+                            <option value="recent">Most Recent</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="duration">Duration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+                    <!-- Article Resources -->
+                    <div class="resource-card" data-category="articles">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Article" alt="Resource">
+                            <div class="resource-type">📄</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Article</div>
+                            <h4>Understanding Anxiety: Symptoms and Coping</h4>
+                            <p>Learn about anxiety symptoms and evidence-based coping strategies for college students.</p>
+                            <div class="resource-meta">
+                                <span class="duration">6 min read</span>
+                                <span class="rating">⭐ 4.6</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Read</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-category="articles">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Article" alt="Resource">
+                            <div class="resource-type">📄</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Article</div>
+                            <h4>Time Management for Students</h4>
+                            <p>Effective strategies to manage your time and reduce academic stress.</p>
+                            <div class="resource-meta">
+                                <span class="duration">5 min read</span>
+                                <span class="rating">⭐ 4.5</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Read</button>
+                        </div>
+                    </div>
+
+                    <!-- Video Resources -->
+                    <div class="resource-card" data-category="videos">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Video" alt="Resource">
+                            <div class="resource-type">🎥</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Video</div>
+                            <h4>Breathing Techniques for Stress Relief</h4>
+                            <p>Master these simple breathing exercises to manage stress and anxiety effectively.</p>
+                            <div class="resource-meta">
+                                <span class="duration">8 min</span>
+                                <span class="rating">⭐ 4.8</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Watch</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-category="videos">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Video" alt="Resource">
+                            <div class="resource-type">🎥</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Video</div>
+                            <h4>Building Healthy Relationships</h4>
+                            <p>Tips for maintaining friendships and romantic relationships in college.</p>
+                            <div class="resource-meta">
+                                <span class="duration">15 min</span>
+                                <span class="rating">⭐ 4.7</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Watch</button>
+                        </div>
+                    </div>
+
+                    <!-- Audio Resources -->
+                    <div class="resource-card" data-category="audio">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Audio" alt="Resource">
+                            <div class="resource-type">🎵</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Audio</div>
+                            <h4>Morning Mindfulness</h4>
+                            <p>Start your day with this 10-minute guided mindfulness meditation.</p>
+                            <div class="resource-meta">
+                                <span class="duration">10 min</span>
+                                <span class="rating">⭐ 4.9</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Listen</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-category="audio">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Audio" alt="Resource">
+                            <div class="resource-type">🎵</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Audio</div>
+                            <h4>Study Focus Sounds</h4>
+                            <p>Ambient sounds designed to improve concentration and focus during study sessions.</p>
+                            <div class="resource-meta">
+                                <span class="duration">60 min</span>
+                                <span class="rating">⭐ 4.6</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Listen</button>
+                        </div>
+                    </div>
+
+                    <!-- Guide Resources -->
+                    <div class="resource-card" data-category="guides">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Guide" alt="Resource">
+                            <div class="resource-type">📋</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Guide</div>
+                            <h4>Self-Care Checklist</h4>
+                            <p>A comprehensive guide to developing and maintaining healthy self-care habits.</p>
+                            <div class="resource-meta">
+                                <span class="duration">10 min</span>
+                                <span class="rating">⭐ 4.8</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Download</button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-category="guides">
+                        <div class="resource-thumbnail">
+                            <img src="https://via.placeholder.com/150x100/4F46E5/FFFFFF?text=Guide" alt="Resource">
+                            <div class="resource-type">📋</div>
+                        </div>
+                        <div class="resource-info">
+                            <div class="resource-category">Guide</div>
+                            <h4>Crisis Intervention Plan</h4>
+                            <p>Step-by-step guide for managing mental health crises and knowing when to seek help.</p>
+                            <div class="resource-meta">
+                                <span class="duration">5 min</span>
+                                <span class="rating">⭐ 4.9</span>
+                            </div>
+                            <button class="btn btn-outline btn-small">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary btn-full">Load More Resources</button>
+            </section>
+
+            <!-- Bookmarked Resources -->
+            <section class="bookmarked-section">
+                <h2>Your Saved Resources</h2>
+                <div class="bookmarked-grid">
+                    <div class="bookmarked-item">
+                        <div class="bookmark-icon">🔖</div>
+                        <div class="bookmark-info">
+                            <h4>Quick Stress Relief Techniques</h4>
+                            <p>Article • 3 min read</p>
+                        </div>
+                        <button class="remove-bookmark">×</button>
+                    </div>
+                    <div class="bookmarked-item">
+                        <div class="bookmark-icon">🔖</div>
+                        <div class="bookmark-info">
+                            <h4>5-Minute Meditation</h4>
+                            <p>Audio • 5 min</p>
+                        </div>
+                        <button class="remove-bookmark">×</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Resource Player Modal -->
+    <div id="resourcePlayerModal" class="modal">
+        <div class="modal-content resource-player">
+            <span class="close">&times;</span>
+            <div class="player-header">
+                <h3 id="playerTitle">Resource Title</h3>
+                <div class="player-meta">
+                    <span id="playerCategory">Category</span>
+                    <span id="playerDuration">Duration</span>
+                </div>
+            </div>
+            
+            <div class="player-content">
+                <div class="video-player" id="videoPlayer" style="display: none;">
+                    <video controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="audio-player" id="audioPlayer" style="display: none;">
+                    <div class="audio-visualizer">
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                    </div>
+                    <audio controls>
+                        <source src="" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <div class="article-content" id="articleContent" style="display: none;">
+                    <div class="article-text">
+                        <p>Article content will be displayed here...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="player-actions">
+                <button class="btn btn-secondary" onclick="bookmarkResource()">🔖 Bookmark</button>
+                <button class="btn btn-primary" onclick="shareResource()">📤 Share</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <div class="nav-icon">🏠</div>
+            <span>Home</span>
+        </a>
+        <a href="chatbot.html" class="nav-item">
+            <div class="nav-icon">💬</div>
+            <span>Chat</span>
+        </a>
+    
+        <a href="breathing-exercises.html" class="nav-item">
+            <div class="nav-icon">🫁</div>
+            <span>Breath</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <div class="nav-icon">🔍</div>
+            <span>Discover</span>
+        </a>
+        <a href="sounds.html" class="nav-item">
+            <div class="nav-icon">🎵</div>
+            <span>Sounds</span>
+        </a>
+        
+    </nav>
+
+    <script src="resources.js"></script>
+</body>
+</html>

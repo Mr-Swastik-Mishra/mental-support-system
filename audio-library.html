@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Library - Mental Wellness Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard-body">
+  <header class="header">
+    <div class="container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <div class="logo-img">M</div>
+        <span class="logo-text">Mental Wellness Hub</span>
+      </div>
+      <div class="header-actions">
+        <button class="back-btn" onclick="history.back()">← Back</button>
+        <button class="btn btn-secondary btn-small" onclick="window.location.href='resources.html'">📚 Resources</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="container">
+      <section class="dashboard-welcome">
+        <div class="welcome-content">
+          <h1 class="welcome-title">🎧 Audio Library</h1>
+          <p class="welcome-subtitle">Meditation, sleep stories, and calming music for instant relief</p>
+        </div>
+        <div class="welcome-stats">
+          <div class="stat-card"><div class="stat-value">80+</div><div class="stat-label">Tracks</div></div>
+          <div class="stat-card"><div class="stat-value">10-30</div><div class="stat-label">Minutes</div></div>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <div class="card dashboard-card">
+          <div class="card-header">
+            <h3>🧘 Guided Meditations</h3>
+            <p>Short, effective sessions</p>
+          </div>
+          <div class="resources-grid">
+            <div class="resource-item" onclick="play('mindfulness-10')">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&h=120&fit=crop" alt="Mindfulness">
+              <div class="resource-content">
+                <h4>10-min Mindfulness</h4>
+                <p>Focus on breath and body</p>
+                <div class="resource-meta"><span>10 min</span><span>EN/HI</span></div>
+              </div>
+            </div>
+            <div class="resource-item" onclick="play('loving-kindness')">
+              <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=200&h=120&fit=crop" alt="Kindness">
+              <div class="resource-content">
+                <h4>Loving Kindness</h4>
+                <p>Compassion for self and others</p>
+                <div class="resource-meta"><span>12 min</span><span>EN/TN</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card dashboard-card">
+          <div class="card-header">
+            <h3>🌙 Sleep Stories</h3>
+            <p>Drift into deep sleep</p>
+          </div>
+          <div class="resources-grid">
+            <div class="resource-item" onclick="play('forest-path')">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=120&fit=crop" alt="Forest">
+              <div class="resource-content">
+                <h4>Forest Path</h4>
+                <p>Gentle narration with ambient sounds</p>
+                <div class="resource-meta"><span>25 min</span><span>EN</span></div>
+              </div>
+            </div>
+            <div class="resource-item" onclick="play('ocean-dream')">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&h=120&fit=crop" alt="Ocean">
+              <div class="resource-content">
+                <h4>Ocean Dream</h4>
+                <p>Waves and soft music</p>
+                <div class="resource-meta"><span>30 min</span><span>EN</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:var(--spacing-xl)">
+        <button class="btn btn-accent" onclick="window.location.href='sounds.html'">Try Calming Soundscapes</button>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item"><div class="nav-icon">🏠</div><span>Dashboard</span></a>
+    <a href="resources.html" class="nav-item active"><div class="nav-icon">📚</div><span>Resources</span></a>
+    <a href="chatbot.html" class="nav-item"><div class="nav-icon">🤖</div><span>AI Chat</span></a>
+  </nav>
+
+  <script>
+    function play(id){
+      alert('Playing audio: '+id+'\n(Embed audio player in production)');
+    }
+  </script>
+</body>
+</html>
